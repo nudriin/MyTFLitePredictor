@@ -33,7 +33,7 @@ class PredictorHelper(
             }
             TfLite.initialize(context, optionBuilder.build())
         }.addOnSuccessListener {
-
+            loadLocalModel()
         }.addOnFailureListener {
             onError(context.getString(R.string.tflite_is_not_initialized_yet))
         }
